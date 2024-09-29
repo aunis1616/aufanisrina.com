@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Romeo & Aufa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lateef&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+        <!-- Gambar Pengantin di kiri -->
+        <div class="content-box">
+            <p>Kepada</p>
+            <h3>Tamu Undangan</h3>
+            <p>Tidak ada yang lebih kami harapkan dibanding doa restu dan kedatangan bapak/ibu/Saudara/i.</p>
+            <p>Hormat Kami,</p>
+            <h4>Romeo<br> & <br>Aufa</h4>
+        </div>    
+    </div>
+    <div class="right">
+        <div class="content">
+            <h2>The Wedding of</h2>
+            <h1>Romeo<br>&<br>Aufa</h1>
+            <p>Kepada: <br> Bapak/Ibu/Saudara/i</p>
+            <a href="opening.html" class="button">Buka Undangan</a>
+        </div>
+    </div>
+</div>
+<script>
+    // Ambil elemen tombol dan elemen konten kanan
+const button = document.querySelector('.button');
+const rightContent = document.querySelector('.right');
+
+// Tambahkan event listener untuk tombol
+button.addEventListener('click', function(event) {
+    event.preventDefault(); // Mencegah link default action
+    rightContent.classList.add('slide-up-right'); // Menambahkan animasi hanya ke sisi kanan
+    setTimeout(function() {
+        window.location.href = button.getAttribute('href'); // Redirect setelah animasi selesai
+    }, 1000); // Sesuaikan dengan durasi animasi (1 detik)
+});
+</script>
+</body>
+</html>
