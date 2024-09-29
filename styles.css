@@ -1,0 +1,325 @@
+/* Style Umum */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Georgia', serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.left {
+    flex: 2;
+    background-image: url('cover-left-img-prewedding-tema-orange-couple.png');
+    background-size: cover;
+    background-position: center;
+    width: 50% !important;
+    margin-right: 15px; 
+}
+
+/* Style untuk konten di bagian kiri */
+.content-box {
+    background-color: rgba(226, 226, 226, 0.904); /* Background putih dengan sedikit transparansi */
+    padding: 18px 20px 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    max-width: 30%; /* Atur ukuran kotak */
+    height: auto;
+    z-index: 2; /* Agar konten terlihat di atas gambar */
+    position: relative;
+    margin-top: 200px;
+}
+
+/* Penyesuaian teks di dalam kotak */
+.content-box h3 {
+    color: #333; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content-box h4 {
+    color: #ff9900;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px !important;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content-box p {
+    color: #333; 
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Pengaturan untuk sisi kanan */
+.right {
+    flex: 1;
+    background-image: url('cover-right-tema-orange.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #ffffff;
+}
+
+.right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Atur kegelapan overlay */
+    z-index: 1;
+}
+
+.right .content {
+    text-align: center;
+    position: relative;
+    padding: 100px 50px;
+    margin: 0;
+    background-color: transparent;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Pengaturan Teks dan Tombol */
+h2, h1, p, .button {
+    z-index: 2;
+    color: #fff; /* Warna teks diubah untuk kontras dengan latar belakang */
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #ffbb56;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.button {
+    padding: 10px 10px;
+    background-color: #ff954a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 100px !important;
+}
+
+.button:hover {
+    background-color: #e0651f;
+}
+
+/* Animasi untuk menggeser konten ke atas pada sisi kanan */
+@keyframes slideUpRight {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Animasi muncul perlahan untuk teks */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi untuk teks di .right (konten utama) */
+h2, h1, p {
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards; /* Durasi animasi 2 detik */
+}
+
+/* Durasi dan jeda animasi teks satu per satu di .right */
+h2 {
+    animation-delay: 0.6s; /* Jeda lebih panjang */
+}
+
+h1 {
+    animation-delay: 1.2s;
+}
+
+p {
+    animation-delay: 1.8s;
+}
+
+/* Animasi melompat untuk tombol */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px); /* Melompat ke atas */
+    }
+    60% {
+        transform: translateY(-5px); /* Melompat lebih kecil */
+    }
+}
+
+/* Terapkan animasi ke tombol */
+.button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #ff954a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 100px !important;
+    animation: bounce 2s infinite; /* Durasi animasi 2 detik, berulang terus */
+}
+
+/* Hover efek untuk tombol */
+.button:hover {
+    background-color: #e0651f;
+}
+
+/* Animasi untuk teks di dalam .content-box (sisi kiri) */
+.content-box h3, .content-box h4, .content-box p {
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards; /* Durasi animasi 2 detik */
+}
+
+/* Durasi dan jeda animasi untuk teks di .content-box */
+.content-box h3 {
+    animation-delay: 0.6s;
+}
+
+.content-box h4 {
+    animation-delay: 1.2s;
+}
+
+.content-box p {
+    animation-delay: 1.8s;
+}
+
+
+/* Responsif untuk Mobile dan Tablet */
+@media (min-width: 300px) and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        height: 100vh;
+        margin-right: 0px;
+    }
+
+    .right .content {
+        padding: 100px 20px;
+    }
+
+    .cover-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1067px) {
+    .left {
+        width: 60%;
+    }
+
+    .right {
+        width: 40%;
+    }
+
+    .right .content {
+        padding: 88px 20px;
+    }
+
+    .cover-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+/* Style Dekstop */
+@media (min-width: 900px) and (max-width: 1023px) {
+    /* Style untuk konten di bagian kiri */
+    .content-box {
+        padding: 18px 15px 15px 15px;
+        max-width: 40% !important; /* Atur ukuran kotak */
+        height: auto;
+        margin-top: 170px;
+    }
+
+    /* Penyesuaian teks di dalam kotak */
+    .content-box h3 { 
+        margin-bottom: 5px !important;
+    }
+
+    .content-box h4 {
+        font-size: 24px !important;
+        margin-bottom: 10px;
+    }
+
+    .content-box p {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
