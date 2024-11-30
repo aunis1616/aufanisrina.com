@@ -24,7 +24,7 @@ body, html {
 }
 
 .left {
-    background-image: url('cover-left-img-prewedding-tema-orange-couple.png');
+    background-image: url('/img/cover-left-img-prewedding-tema-orange-couple.png');
     background-size: cover;
     background-position: center;
     width: 70%;
@@ -906,6 +906,16 @@ img.corner {
     /* background-color: #ff3232; */
 }
 
+.teks-gallery{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 2.0rem;
+    color: #5b3922;
+    margin-bottom: 20px;
+    text-align: center;
+   
+}
+
 /* Styling untuk video di galeri */
 .video-wrapper {
     margin: 0px 0;
@@ -920,42 +930,92 @@ img.corner {
     animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-/* Styling untuk foto-foto */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+/* Styling untuk Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
     padding: 20px 0;
 }
 
-.gallery img {
+.slideshow-container img {
+    border-radius: 15px;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Tombol Previous dan Next */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
+    display: flex;
+    justify-content: space-between; /* Memastikan tombol berada di kedua sisi */
+    transform: translateY(-50%); /* Mengatur tombol agar vertikal center */
+    padding: 0 0px; /* Memberi jarak sisi */
 }
 
-/* Animasi fadeIn */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.teks-gallery{
-    font-family: 'Dancing Script', cursive;
+.prev, .next {
+    cursor: pointer;
+    color: white;
     font-weight: bold;
-    font-size: 2.0rem;
-    color: #5b3922;
-    margin-bottom: 20px;
+    font-size: 5w;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+    background-color: rgba(43, 43, 43, 0.7); /* Background semi-transparan */
+    padding: 10px 15px; /* Memberi ruang di dalam tombol */
+    border-radius: 5px; /* Sudut membulat */
+    border: none; /* Menghilangkan border default */
+    width: 10%;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Warna saat hover */
+}
+
+.prev {
+    left: 5%;
+    margin-right: auto; /* Memastikan tombol Prev berada di sebelah kiri */
+}
+
+.next {
+    right: 5%;
+    margin-left: auto; /* Memastikan tombol Next berada di sebelah kanan */
+}
+
+/* Titik di bawah slideshow */
+.dot-container {
     text-align: center;
-   
+    padding: 10px 0;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    margin: 0 2px;
+    background-color: #a7a6a6; /* Warna default titik */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #2b2a2a; /* Warna titik aktif */
+}
+
+/* Animasi Fade */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
 /* Bingkai halaman Gallery */
@@ -983,6 +1043,20 @@ img.corner {
     z-index: 1;
    
 }
+
+/* Animasi fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* Styling untuk Halaman RSVP */
 .rsvp-page {
@@ -1086,6 +1160,7 @@ button:hover {
     z-index: 1;
    
 }
+
 
 /* Styling untuk Halaman Gift */
 .gift-page {
