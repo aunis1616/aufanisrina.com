@@ -24,7 +24,7 @@ body, html {
 }
 
 .left {
-    background-image: url('/img/cover-left-img-prewedding-tema-orange-couple.png');
+    background-image: url('cover-left-img-prewedding-tema-orange-couple.png');
     background-size: cover;
     background-position: center;
     width: 70%;
