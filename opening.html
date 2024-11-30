@@ -33,7 +33,7 @@
             <div class="content-wrapper">
 
                 <!-- Halaman Pembuka -->
-                <div class="opening-page" id="openingPage" class="hidden">
+                <div class="opening-page page-section" id="openingPage" class="hidden">
                     <div class="grid-opening">
                         <img src="bingkai-top-left.svg" class="corner top-left1" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right1" alt="Bingkai Bunga Kanan Atas">
@@ -56,7 +56,7 @@
                 
 
                 <!-- Halaman Quotes -->
-                <div class="quotes-page" id="quotesPage">
+                <div class="quotes-page page-section" id="quotesPage">
                     <div class="grid-quote">
                          <img src="bingkai-top-left.svg" class="corner top-left2" alt="Bingkai Bunga Kiri Atas">
                          <img src="bingkai-top-right.svg" class="corner top-right2" alt="Bingkai Bunga Kanan Atas">
@@ -82,7 +82,7 @@
                 </div>
 
                 <!-- Halaman Mempelai -->
-                <div class="mempelai-page" id="mempelaiPage">
+                <div class="mempelai-page page-section" id="mempelaiPage">
                     <div class="grid-mempelai">
                         <img src="bingkai-top-left.svg" class="corner top-left3" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right3" alt="Bingkai Bunga Kanan Atas">
@@ -102,7 +102,6 @@
                                     </div>
                             </div>
                 
-
                             <!-- Simbol & Tengah -->
                             <div class="center-symbol">
                                  <span>&amp;</span> <!-- Simbol hati atau bisa menggunakan '&#10084;' jika ingin icon love -->
@@ -129,7 +128,7 @@
                 </div>
 
                 <!-- Halaman Event dengan Countdown -->
-                <div class="event-page" id="eventPage">
+                <div class="event-page page-section" id="eventPage">
                     <div class="grid-event">
                         <img src="bingkai-top-left.svg" class="corner top-left4" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right4" alt="Bingkai Bunga Kanan Atas">
@@ -173,7 +172,7 @@
                 </div>
 
                 <!-- Halaman Gallery -->
-                <div class="gallery-page" id="galleryPage">
+                <div class="gallery-page page-section" id="galleryPage">
                     <div class="grid-gallery">
                         <img src="bingkai-top-left.svg" class="corner top-left5" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right5" alt="Bingkai Bunga Kanan Atas">
@@ -225,7 +224,7 @@
                 </div>
 
                 <!-- Halaman RSVP -->
-                <div class="rsvp-page" id="rsvpPage">
+                <div class="rsvp-page page-section" id="rsvpPage">
                     <div class="grid-rsvp">
                         <img src="bingkai-top-left.svg" class="corner top-left6" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right6" alt="Bingkai Bunga Kanan Atas">
@@ -254,7 +253,7 @@
                 </div>
 
                 <!-- Halaman Gift -->
-                <div class="gift-page" id="giftPage">
+                <div class="gift-page page-section" id="giftPage">
                     <div class="grid-gift">
                         <img src="bingkai-top-left.svg" class="corner top-left7" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right7" alt="Bingkai Bunga Kanan Atas">
@@ -312,7 +311,7 @@
                 </div>
 
                 <!-- Halaman Comment -->
-                <div class="comment-page" id="commentPage">
+                <div class="comment-page page-section" id="commentPage">
                     <div class="grid-comment">
                         <img src="bingkai-top-left.svg" class="corner top-left8" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right8" alt="Bingkai Bunga Kanan Atas">
@@ -348,7 +347,7 @@
 
  
                 <!-- Halaman Closing -->
-                <div class="closing-page" id="closingPage">
+                <div class="closing-page page-section" id="closingPage">
                     <div class="grid-closing">
                         <img src="bingkai-top-left.svg" class="corner top-left9" alt="Bingkai Bunga Kiri Atas">
                         <img src="bingkai-top-right.svg" class="corner top-right9" alt="Bingkai Bunga Kanan Atas">
@@ -431,56 +430,29 @@
         </div>
     </div>
               
-<!-- java sripct untuk animasi -->
+<!-- JavaScript untuk animasi -->
 <script>
-    // Fungsi untuk menampilkan halaman Quotes
-    function showQuotesPage() {
-        
-        // Tampilkan halaman Quotes dengan animasi
-        const quotesPage = document.getElementById("quotesPage");
-        quotesPage.classList.remove("hidden"); // Hapus class hidden untuk menampilkan halaman
-        setTimeout(() => {
-            quotesPage.classList.add("visible"); // Tambahkan class visible untuk memulai animasi
-        }, 500); // Tambahkan sedikit delay sebelum animasi Quotes dimulai
-
-        // Setelah halaman Quotes selesai, tampilkan halaman Mempelai
-        setTimeout(showMempelaiPage, 7000); // Atur durasi sesuai dengan panjang halaman Quotes (misal 7 detik)
-    }
-
-    // Fungsi untuk menampilkan halaman Mempelai
-    function showMempelaiPage() {
-        // Sembunyikan halaman Quotes
-        document.getElementById("").style.display = "none";
-        
-        // Tampilkan halaman Mempelai
-        const mempelaiPage = document.getElementById("mempelaiPage");
-        mempelaiPage.classList.remove("hidden"); // Hapus class hidden untuk memulai animasi
-        setTimeout(() => {
-            mempelaiPage.classList.add("visible"); // Tambahkan class visible untuk animasi fade-in
-        }, 500); // Delay sebelum animasi Mempelai dimulai
-        
-        // Setelah halaman Mempelai selesai, tampilkan halaman Event
-        setTimeout(showEventPage, 7000); // Atur durasi sesuai dengan panjang halaman Mempelai (misal 7 detik)
-    }
-
-    // Fungsi untuk menampilkan halaman Event
-    function showEventPage() {
-        // Sembunyikan halaman Mempelai
-        document.getElementById("mempelaiPage").style.display = "none";
-        
-        // Tampilkan halaman Event
-        const eventPage = document.getElementById("eventPage");
-        eventPage.classList.remove("hidden"); // Hapus class hidden untuk memulai animasi
-        setTimeout(() => {
-            eventPage.classList.add("visible"); // Tambahkan class visible untuk animasi fade-in
-        }, 500); // Delay sebelum animasi Event dimulai
-    }
-
-    // Jalankan fungsi setelah halaman Opening selesai (misal 5 detik)
-    setTimeout(showQuotesPage, 5000); // Quotes muncul setelah Opening selesai
-</script>
-
-
+    // Fungsi untuk memulai animasi saat elemen masuk viewport
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible'); // Menambahkan kelas visible
+          observer.unobserve(entry.target); // Menghentikan observasi setelah elemen terlihat
+        }
+      });
+    }, {
+      threshold: 0.3 // Mendeteksi saat 50% elemen terlihat
+    });
+  
+    // Menargetkan setiap halaman yang ingin dianimasikan
+    const pages = document.querySelectorAll('.opening-page, .quotes-page, .mempelai-page, .event-page, .gallery-page, .rsvp-page, .gift-page, .comment-page, .closing-page');
+  
+    // Mengamati setiap halaman
+    pages.forEach(page => {
+      observer.observe(page);
+    });
+  </script>  
+    
 <!-- Countdown Timer Script -->
 <script>
     const eventDate = new Date("December 19, 2025 09:00:00").getTime();
